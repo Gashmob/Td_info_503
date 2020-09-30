@@ -3,4 +3,7 @@
     <string name="phone_button">Call</string>
     <string name="sms_button">SMS</string>
     <string name="email_button">Email</string>
+    <string name="contact_name">%1$s %2$s</string>
+    <string name="send_sms_error">Impossible d\'envoyer un sms</string>
+    <string name="send_email_chooser">Envoyer un email…</string>
 </resources>

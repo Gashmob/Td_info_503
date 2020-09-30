@@ -52,7 +52,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="John Doe"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <View
@@ -162,8 +161,7 @@
             android:id="@+id/contact_phone"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1.5"
-            android:text="06 05 04 03 02"/>
+            android:layout_weight="1.5"/>
 
     </LinearLayout>
 
@@ -184,8 +182,7 @@
             android:id="@+id/contact_home"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1.5"
-            android:text="04 03 02 01 00"/>
+            android:layout_weight="1.5"/>
 
     </LinearLayout>
 
@@ -206,8 +203,7 @@
             android:id="@+id/contact_email"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1.5"
-            android:text="john.doe@gmail.com"/>
+            android:layout_weight="1.5"/>
 
     </LinearLayout>
 
@@ -234,8 +230,7 @@
             android:id="@+id/contact_location"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1.5"
-            android:text="12, rue quelque part, 73000 Chambery"/>
+            android:layout_weight="1.5"/>
 
     </LinearLayout>
 
