@@ -1,8 +1,11 @@
 package fr.kevin.contact;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
+import android.graphics.PorterDuff;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -11,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import fr.kevin.contact.model.Contact;
@@ -68,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -75,7 +80,9 @@ public class MainActivity extends AppCompatActivity {
             if (data != null) {
                 Bundle bundle = data.getExtras();
                 if (bundle != null) {
-                    ((ImageView) findViewById(R.id.profil_image)).setImageBitmap((Bitmap) bundle.get("data"));
+                    ImageView image = findViewById(R.id.profil_image);
+                    image.setImageBitmap((Bitmap) bundle.get("data"));
+                    image.setImageTintList(new ColorStateList(new int[0][0], new int[0])); // Enlève le tint
                 }
             }
         }
