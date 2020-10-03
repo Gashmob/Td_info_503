@@ -6,4 +6,6 @@
     <string name="contact_name">%1$s %2$s</string>
     <string name="send_sms_error">Impossible d\'envoyer un sms</string>
     <string name="send_email_chooser">Envoyer un email…</string>
+
+    <string name="erase_toast_message">Supprimer %1$s %2$s ?</string>
 </resources>

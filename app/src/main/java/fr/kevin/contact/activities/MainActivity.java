@@ -1,9 +1,8 @@
-package fr.kevin.contact;
+package fr.kevin.contact.activities;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
-import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import fr.kevin.contact.R;
 import fr.kevin.contact.model.Contact;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        contact = new Contact("Michel", "Camil", "06 34 34 54 26", "04 45 62 25 52", "michelcamil@monsupersite.fr", "14, rue des escadrilles, 95000 PARIS");
+        contact = (Contact) getIntent().getSerializableExtra(ListActivity.EXTRA_CONTACT);
+        //contact = new Contact("Michel", "Camil", "06 34 34 54 26", "04 45 62 25 52", "michelcamil@monsupersite.fr", "14, rue des escadrilles, 95000 PARIS");
 
         ((TextView) findViewById(R.id.contact_name)).setText(getString(R.string.contact_name, contact.getFirstName(), contact.getLastName()));
         ((TextView) findViewById(R.id.contact_phone)).setText(contact.getPhone());

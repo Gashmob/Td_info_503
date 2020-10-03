@@ -1,6 +1,9 @@
 package fr.kevin.contact.model;
 
-public class Contact {
+import java.io.Serializable;
+
+public class Contact implements Serializable {
+
     private static int ID = 1;
 
     private int id;
@@ -19,6 +22,10 @@ public class Contact {
         this.home = home;
         this.mail = mail;
         this.location = location;
+    }
+
+    public Contact(String firstName, String lastName) {
+        this(firstName, lastName, "06 23 37 74 84", "04 79 23 35 05", firstName + "." + lastName + "@etu.univ-smb.fr", "Bâtiment 10, 73376 Le Bourget-du-Lac");
     }
 
     public int getId() {

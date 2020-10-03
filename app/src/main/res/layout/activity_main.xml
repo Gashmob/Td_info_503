@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <LinearLayout
         android:id="@+id/top_layout"
@@ -79,13 +78,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_phone"
-                        android:tint="@color/colorAccent"/>
+                        android:tint="@color/colorAccent" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="@string/phone_button"/>
+                        android:text="@string/phone_button" />
 
                 </LinearLayout>
 
@@ -100,13 +99,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_chat"
-                        android:tint="@color/colorAccent"/>
+                        android:tint="@color/colorAccent" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="@string/sms_button"/>
+                        android:text="@string/sms_button" />
 
                 </LinearLayout>
 
@@ -121,13 +120,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_email"
-                        android:tint="@color/colorAccent"/>
+                        android:tint="@color/colorAccent" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="@string/email_button"/>
+                        android:text="@string/email_button" />
 
                 </LinearLayout>
 
@@ -155,13 +154,13 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:src="@drawable/ic_phone"
-            android:tint="@color/colorDefault"/>
+            android:tint="@color/colorDefault" />
 
         <TextView
             android:id="@+id/contact_phone"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1.5"/>
+            android:layout_weight="1.5" />
 
     </LinearLayout>
 
@@ -176,13 +175,13 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:src="@drawable/ic_phone"
-            android:tint="@color/colorDefault"/>
+            android:tint="@color/colorDefault" />
 
         <TextView
             android:id="@+id/contact_home"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1.5"/>
+            android:layout_weight="1.5" />
 
     </LinearLayout>
 
@@ -197,13 +196,13 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:src="@drawable/ic_email"
-            android:tint="@color/colorDefault"/>
+            android:tint="@color/colorDefault" />
 
         <TextView
             android:id="@+id/contact_email"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1.5"/>
+            android:layout_weight="1.5" />
 
     </LinearLayout>
 
@@ -224,13 +223,13 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:src="@drawable/ic_location"
-            android:tint="@color/colorDefault"/>
+            android:tint="@color/colorDefault" />
 
         <TextView
             android:id="@+id/contact_location"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1.5"/>
+            android:layout_weight="1.5" />
 
     </LinearLayout>
 
