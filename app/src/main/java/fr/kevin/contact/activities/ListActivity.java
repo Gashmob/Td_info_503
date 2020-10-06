@@ -2,6 +2,7 @@ package fr.kevin.contact.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
 
@@ -62,5 +63,11 @@ public class ListActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Add a contact", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.settings, menu);
+        return true;
     }
 }
