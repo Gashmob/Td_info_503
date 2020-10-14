@@ -10,8 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,7 +55,7 @@ public class ListActivity extends AppCompatActivity {
             }
         });
 
-        ((FloatingActionButton) findViewById(R.id.contact_add)).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.contact_add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Add a contact", Toast.LENGTH_SHORT).show();
@@ -68,6 +66,15 @@ public class ListActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.settings, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        int id = R.id.storage_none;
+
+        // TODO : Prochain td
+
         return true;
     }
 }
