@@ -17,11 +17,13 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import fr.kevin.contact.R;
+import fr.kevin.contact.dialog.Updatable;
 import fr.kevin.contact.model.Contact;
+import fr.kevin.contact.storage.ContactStorage;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Updatable {
 
-    private static int REQUEST_IMAGE_CAPTURE = 1;
+    private static final int REQUEST_IMAGE_CAPTURE = 1;
 
     private Contact contact;
 
@@ -30,8 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        contact = (Contact) getIntent().getSerializableExtra(ListActivity.EXTRA_CONTACT);
-        //contact = new Contact("Michel", "Camil", "06 34 34 54 26", "04 45 62 25 52", "michelcamil@monsupersite.fr", "14, rue des escadrilles, 95000 PARIS");
+        contact = ContactStorage.get(getApplicationContext()).find((Integer) getIntent().getSerializableExtra(ListActivity.EXTRA_CONTACT));
 
         ((TextView) findViewById(R.id.contact_name)).setText(getString(R.string.contact_name, contact.getFirstName(), contact.getLastName()));
         ((TextView) findViewById(R.id.contact_phone)).setText(contact.getPhone());
@@ -87,5 +88,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    @Override
+    public void update() {
+        ((TextView) findViewById(R.id.contact_name)).setText(getString(R.string.contact_name, contact.getFirstName(), contact.getLastName()));
+        ((TextView) findViewById(R.id.contact_phone)).setText(contact.getPhone());
+        ((TextView) findViewById(R.id.contact_home)).setText(contact.getHome());
+        ((TextView) findViewById(R.id.contact_email)).setText(contact.getMail());
+        ((TextView) findViewById(R.id.contact_location)).setText(contact.getLocation());
     }
 }

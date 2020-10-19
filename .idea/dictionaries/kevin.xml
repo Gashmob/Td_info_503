@@ -1,9 +1,15 @@
 <component name="ProjectDictionaryState">
   <dictionary name="kevin">
     <words>
+      <w>annuler</w>
+      <w>aucun</w>
       <w>bourget</w>
       <w>bâtiment</w>
       <w>camil</w>
+      <w>choix</w>
+      <w>confirmer</w>
+      <w>données</w>
+      <w>editer</w>
       <w>enlève</w>
       <w>envoyer</w>
       <w>escadrilles</w>
@@ -11,7 +17,12 @@
       <w>prochain</w>
       <w>profil</w>
       <w>smsto</w>
+      <w>stockage</w>
       <w>supprimer</w>
+      <w>valider</w>
+      <w>vouloir</w>
+      <w>vous</w>
+      <w>êtes</w>
     </words>
   </dictionary>
 </component>

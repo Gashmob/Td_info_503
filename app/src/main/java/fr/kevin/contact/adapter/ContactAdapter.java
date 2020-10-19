@@ -1,5 +1,6 @@
 package fr.kevin.contact.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import java.util.List;
 
 import fr.kevin.contact.R;
 import fr.kevin.contact.model.Contact;
+import fr.kevin.contact.storage.ContactStorage;
 
 abstract public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactHolder> {
 
@@ -27,10 +29,10 @@ abstract public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter
         }
     }
 
-    private List<Contact> contacts;
+    private final Context context;
 
-    public ContactAdapter(List<Contact> contacts) {
-        this.contacts = contacts;
+    public ContactAdapter(Context context) {
+        this.context = context;
     }
 
     @NonNull
@@ -56,13 +58,16 @@ abstract public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter
 
     @Override
     public void onBindViewHolder(@NonNull ContactHolder holder, int position) {
-        String s = contacts.get(position).getFirstName() + " " + contacts.get(position).getLastName();
-        holder.name.setText(s);
+        Contact contact = ContactStorage.get(context).findAll().get(position);
+        holder.itemView.setTag(contact.getId());
+        holder.name.setText(contact.getFirstName() + " " + contact.getLastName());
     }
 
     @Override
     public int getItemCount() {
-        return contacts.size();
+        if (ContactStorage.get(context).findAll() == null)
+            return 0;
+        return ContactStorage.get(context).findAll().size();
     }
 
     public abstract void onItemClick(View v);
