@@ -14,14 +14,18 @@ public class Contact implements Serializable {
     private String mail;
     private String location;
 
-    public Contact(String firstName, String lastName, String phone, String home, String mail, String location) {
-        this.id = ID++;
+    public Contact(int id, String firstName, String lastName, String phone, String home, String mail, String location) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phone = phone;
         this.home = home;
         this.mail = mail;
         this.location = location;
+    }
+
+    public Contact(String firstName, String lastName, String phone, String home, String mail, String location) {
+        this(ID++, firstName, lastName, phone, home, mail, location);
     }
 
     public Contact(String firstName, String lastName) {

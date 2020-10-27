@@ -14,4 +14,10 @@
     <string name="storage_choice_null">Aucun</string>
     <string name="storage_choice_json">Format JSON</string>
     <string name="storage_choice_bdd">Base de données</string>
+
+    <string name="dialog_delete_title">Confirmer la suppression</string>
+    <string name="dialog_delete_message">Êtes-vous sûr de vouloir supprimer %1$s %2$s ?</string>
+    <string name="dialog_positive_button">Valider</string>
+    <string name="dialog_negative_button">Annuler</string>
+    <string name="dialog_edit_title">Editer un contact</string>
 </resources>

@@ -18,8 +18,16 @@ public class ContactJsonFileStorage extends JsonFileStorage<Contact> {
     private static final String CONTACT_MAIL = "mail";
     private static final String CONTACT_LOCATION = "location";
 
-    public ContactJsonFileStorage(Context context, String name) {
-        super(context, name);
+    private static ContactJsonFileStorage STORAGE;
+
+    public static ContactJsonFileStorage get(Context context) {
+        if (STORAGE == null) STORAGE = new ContactJsonFileStorage(context);
+        
+        return STORAGE;
+    }
+
+    private ContactJsonFileStorage(Context context) {
+        super(context, NAME);
     }
 
     @Override
@@ -27,7 +35,7 @@ public class ContactJsonFileStorage extends JsonFileStorage<Contact> {
         JSONObject json = new JSONObject();
 
         try {
-            json.put(CONTACT_ID, "" + id);
+            json.put(CONTACT_ID, id);
             json.put(CONTACT_FIRST_NAME, object.getFirstName());
             json.put(CONTACT_LAST_NAME, object.getLastName());
             json.put(CONTACT_PHONE, object.getPhone());
@@ -44,7 +52,8 @@ public class ContactJsonFileStorage extends JsonFileStorage<Contact> {
     @Override
     protected Contact jsonObjectToObject(JSONObject jsonObject) {
         try {
-            return new Contact(jsonObject.getString(CONTACT_FIRST_NAME),
+            return new Contact(jsonObject.getInt(CONTACT_ID),
+                    jsonObject.getString(CONTACT_FIRST_NAME),
                     jsonObject.getString(CONTACT_LAST_NAME),
                     jsonObject.getString(CONTACT_PHONE),
                     jsonObject.getString(CONTACT_HOME),
