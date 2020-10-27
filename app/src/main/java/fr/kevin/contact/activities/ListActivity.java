@@ -101,13 +101,13 @@ public class ListActivity extends AppCompatActivity implements Updatable {
     }
 
     @Override
-    protected void onStart() {
-        update();
-        super.onStart();
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override
     public void update() {
         list.getAdapter().notifyDataSetChanged();
+        onResume();
     }
 }

@@ -19,8 +19,8 @@ public class ContactDialogFragment extends DialogFragment {
 
     private static final int ID_NONE = -1;
 
-    private Updatable updatable;
-    private int id;
+    private final Updatable updatable;
+    private final int id;
     private View view;
 
     public ContactDialogFragment(Updatable updatable) {
